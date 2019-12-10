@@ -1,7 +1,7 @@
 # kotlin-exposed-realworld
-[![CircleCI](https://circleci.com/gh/pjagielski/kotlin-spring-realworld.svg?style=svg)](https://circleci.com/gh/pjagielski/kotlin-spring-realworld)
+[![CircleCI](https://circleci.com/gh/TouK/kotlin-exposed-realworld.svg?style=svg)](https://circleci.com/gh/pjagielski/kotlin-spring-realworld)
 
-Medium clone backend using Kotlin, Spring and [Exposed](https://github.com/JetBrains/Exposed), API as specified on https://realworld.io/
+Medium clone backend using Kotlin, Spring, [Krush](https://github.com/TouK/krush) and [Exposed](https://github.com/JetBrains/Exposed), API as specified on https://realworld.io/
 
 ## Rationale
 The repository shows how we use Kotlin+Exposed in TouK. 
