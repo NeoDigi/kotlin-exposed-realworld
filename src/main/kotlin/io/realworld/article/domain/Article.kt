@@ -19,7 +19,7 @@ import javax.persistence.Table
 @Table(name = "articles")
 data class Article(
 
-        @Id @GeneratedValue
+        @Id
         @Convert(value = ArticleIdConverter::class)
         val id: ArticleId = ArticleId.New,
 

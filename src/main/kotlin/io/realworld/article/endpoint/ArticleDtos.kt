@@ -34,6 +34,7 @@ data class CreateArticleRequest(
 )
 
 data class CreateArticleDto(
+        val id: Long,
         val title: String,
         val description: String,
         val body: String,

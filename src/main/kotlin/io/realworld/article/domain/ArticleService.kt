@@ -5,6 +5,7 @@ import io.realworld.article.endpoint.UpdateArticleDto
 import io.realworld.comment.domain.CommentService
 import io.realworld.security.domain.LoggedUserService
 import io.realworld.shared.domain.ApplicationException
+import io.realworld.shared.refs.ArticleId
 import org.springframework.dao.DuplicateKeyException
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -23,7 +24,7 @@ class ArticleService(
         val loggedUser = loggedUserService.loggedUserOrThrow()
         val tags = tagService.storeOrLoad(createArticleDto.tagList)
         val article = createArticleDto.run {
-            Article(title = this.title, description = this.description, authorId = loggedUser.id, tags = tags,
+            Article(id= ArticleId.Persisted(this.id), title = this.title, description = this.description, authorId = loggedUser.id, tags = tags,
                     body = this.body)
         }
         try {
