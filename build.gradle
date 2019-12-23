@@ -9,7 +9,7 @@ buildscript {
         assertjVersion = '3.11.1'
         mockitoKotlinVersion = '1.6.0'
         javafakerVersion = '0.16'
-        krushVersion = '0.1.0'
+        krushVersion = '0.2.0'
     }
     repositories {
         mavenCentral()
@@ -31,6 +31,10 @@ apply plugin: 'io.spring.dependency-management'
 group = 'io.realworld'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+
+kapt {
+    correctErrorTypes = true
+}
 
 compileKotlin {
     kotlinOptions {
