@@ -32,10 +32,6 @@ group = 'io.realworld'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
-kapt {
-    correctErrorTypes = true
-}
-
 compileKotlin {
     kotlinOptions {
         freeCompilerArgs = ["-Xjsr305=strict"]
