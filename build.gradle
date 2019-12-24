@@ -9,7 +9,7 @@ buildscript {
         assertjVersion = '3.11.1'
         mockitoKotlinVersion = '1.6.0'
         javafakerVersion = '0.16'
-        krushVersion = '0.1.0'
+        krushVersion = '0.2.0'
     }
     repositories {
         mavenCentral()

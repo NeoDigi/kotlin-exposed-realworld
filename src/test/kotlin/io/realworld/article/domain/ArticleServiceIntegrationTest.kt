@@ -68,7 +68,7 @@ internal class ArticleServiceIntegrationTest {
         val article = articleService.create(createArticleDto)
 
         article.run {
-            assertThat(id).isEqualTo(createArticleDto.id)
+            assertThat(id.value).isEqualTo(createArticleDto.id)
             assertThat(title).isEqualTo(createArticleDto.title)
             assertThat(description).isEqualTo(createArticleDto.description)
             assertThat(body).isEqualTo(createArticleDto.body)

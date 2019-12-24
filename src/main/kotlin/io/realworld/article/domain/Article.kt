@@ -4,28 +4,20 @@ import io.realworld.shared.refs.ArticleId
 import io.realworld.shared.refs.ArticleIdConverter
 import io.realworld.shared.refs.UserId
 import io.realworld.shared.refs.UserIdConverter
-import pl.touk.krush.Convert
-import pl.touk.krush.Converter
 import java.time.ZonedDateTime
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.JoinTable
-import javax.persistence.ManyToMany
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "articles")
 data class Article(
 
         @Id
-        @Convert(value = ArticleIdConverter::class)
+        @Convert(converter = ArticleIdConverter::class)
         val id: ArticleId = ArticleId.New,
 
         val title: String,
 
-        @Convert(value = SlugConverter::class)
+        @Convert(converter = SlugConverter::class)
         val slug: Slug = Slug.fromTitle(title),
 
         val description: String,
@@ -33,7 +25,7 @@ data class Article(
         @Column(length = 1000)
         val body: String,
 
-        @Convert(value = UserIdConverter::class)
+        @Convert(converter = UserIdConverter::class)
         @Column(name = "user_id")
         val authorId: UserId,
 
@@ -58,7 +50,7 @@ data class Slug(
     }
 }
 
-class SlugConverter : Converter<Slug, String> {
+class SlugConverter : AttributeConverter<Slug, String> {
     override fun convertToDatabaseColumn(attribute: Slug): String {
         return attribute.value
     }
